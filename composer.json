@@ -1,0 +1,15 @@
+{
+    "name": "fut/calculator",
+    "description": "Fifa Ultimate Team player information calculator.",
+    "authors": [
+        {
+            "name": "Eduard Bess",
+            "email": "eduard.bess@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0" : {
+            "Fut" : "src"
+        }
+    }
+}
