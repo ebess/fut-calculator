@@ -38,7 +38,7 @@ class Calculator
      * @var integer[]
      */
     private $vars = array(
-        'const'         => 0x60000000,
+        'const'         => 0x70000000,
         'version_const' => 0x2000000,
         'version_step'  => 0x1000000
     );
