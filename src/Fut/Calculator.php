@@ -160,4 +160,57 @@ class Calculator
 
         return $this;
     }
+
+
+    public function calcBid($bid, $offset = 0) {
+
+        if ($bid < 10000) {
+
+            $bid = floor($bid/100) * 100;
+            if ($offset < 0) {
+                $offset++;
+                $bid -= 100;
+            } elseif ($offset > 0) {
+                $offset--;
+                $bid += 100;
+            }
+
+        }
+        if ($bid >= 10000 && $bid < 50000) {
+
+            $bid = floor($bid/250) * 250;
+            if ($offset < 0) {
+                $offset++;
+                $bid -= $bid == 10000 ? 100 : 250;
+            } elseif ($offset > 0) {
+                $offset--;
+                $bid += 250;
+            }
+
+        } elseif ($bid >= 50000 && $bid < 100000) {
+
+            $bid = floor($bid/500)*500;
+            if ($offset < 0) {
+                $offset++;
+                $bid -= $bid == 50000 ? 250 : 500;
+            } elseif ($offset > 0) {
+                $offset--;
+                $bid += 500;
+            }
+
+        } elseif ($bid >= 100000) {
+
+            $bid = floor($bid/1000)*1000;
+            if ($offset < 0) {
+                $offset++;
+                $bid -= $bid == 100000 ? 500 : 1000;
+            } elseif ($offset > 0) {
+                $offset--;
+                $bid += 1000;
+            }
+
+        }
+
+        return $offset == 0 ? $bid : $this->calcBid($bid, $offset);
+    }
 }
