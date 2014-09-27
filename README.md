@@ -3,7 +3,7 @@ You can get all id information (resource, definition, asset) for Fifa 14 Ultimat
  composer.json
 ```json
     require {
-        "fut/calculator": "v1.0.0"
+        "fut/calculator": "dev-master"
     }
 ```
 
